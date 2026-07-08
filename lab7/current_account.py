@@ -10,7 +10,9 @@ class CurrentAccount(Account):
     def withdraw(self, amount):
         if self.balance - amount >= -self.overdraft_limit:
             self.balance -= amount
+            self.add_history("WITHDRAW", amount)
         else:
             print("Overdraft limit exceeded")
+            self.add_history("WITHDRAW FAILED", amount)
 
     

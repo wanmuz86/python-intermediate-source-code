@@ -42,8 +42,12 @@ def main():
         acc.apply_interest()
     
     inspect_object(acc)
+    
+    # Print the transaction history of Ali's account
+    acc.print_history()
 
     bank.save_to_db()
+
     # Ali and Mira's account
     bank.list_accounts()
 

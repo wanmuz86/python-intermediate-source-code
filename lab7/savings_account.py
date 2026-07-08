@@ -8,4 +8,7 @@ class SavingsAccount(Account):
         self.interest_rate = interest_rate
 
     def apply_interest(self):
-        self.balance += self.balance * self.interest_rate
+        # call the menthod round(XX, 2) -> To round to 2 decimal point
+        interest = round(self.balance * self.interest_rate,2)
+        self.balance +=  interest
+        self.add_history("INTEREST", interest)
