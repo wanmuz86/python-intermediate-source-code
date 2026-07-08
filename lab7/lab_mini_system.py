@@ -28,19 +28,24 @@ def main():
 
     if not bank.accounts:  # If no data
         # Create a mock data
+        #Creating new account using constructor
+        # Add the account to accounts collenction in bank
         bank.add_account(SavingsAccount("S200","Ali",200,0.05))
         bank.add_account(CurrentAccount("C300", "Mira", 50, overdraft_limit=100))
     
     acc = bank.get_account("S200")
     acc.deposit(20)
 
+    # Check if there is method apply_interest
+    # If it is CurrentAccount => False
     if hasattr(acc, "apply_interest"):
         acc.apply_interest()
     
     inspect_object(acc)
 
     bank.save_to_db()
-    bank.list_accounts
+    # Ali and Mira's account
+    bank.list_accounts()
 
 if __name__ == "__main__":
     main()

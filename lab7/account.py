@@ -19,4 +19,4 @@ class Account:
             print("Insufficient fund")
 
     def get_summary(self):
-        return f"{self.no_account} | {self.owner} | Balance: {self.balance}"
+        return f"{self.account_no} | {self.owner} | Balance: {self.balance}"

@@ -5,6 +5,8 @@ import shelve
 
 class Bank:
     def __init__(self):
+        # 1 bank has many accounts
+        # Inside bank needs reference to accounts using collection
         self.accounts = {} #1 to many relation in DB , UML -> Aggregation
 
     def add_account(self,account):
@@ -22,7 +24,7 @@ class Bank:
         print("\n---Account List--")
         # For loop in dictionary (values())
         for acc in self.accounts.values():
-            print(acc.get_summary)
+            print(acc.get_summary())
 
 
     # Save and Retrieve from db (shelve)
@@ -37,6 +39,8 @@ class Bank:
                 db[acc_no] = acc       # save based on key
     
     def load_from_db(self, filename="bank_db"):
+        # look for bank_db file
         with shelve.open(filename) as db:
+            # for each item stored, retrieved it and put under accounts
             for key in db:
                 self.accounts[key] = db[key] #retrive based on key
