@@ -40,8 +40,10 @@ def load_from_json(filename):
 
 # load from csv
 def load_from_csv(filename):
-    with open(filename, "r") as json_file:
-        data = json.load(json_file)
+    with open(filename, "r", newline="") as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            print(row)
 
 def save_to_csv(data,filename):
     with open(filename, "w", newline="") as csv_file:
@@ -69,8 +71,8 @@ def main():
     save_to_csv(file_data, "files.csv")
 
     # to read from file
-    loaded_csv = load_from_csv("files.csv")
-    print("Loaded from CSV: ", len(loaded_csv))
+    load_from_csv("files.csv")
+
 
 
 if __name__ == "__main__":

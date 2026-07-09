@@ -1,5 +1,6 @@
 name,path,size
 hello_world.txt,./hello_world.txt,11
 goodbye_world.txt,./goodbye_world.txt,13
-files.json,./files.json,410
-main.py,./main.py,2059
+files.json,./files.json,412
+files.csv,./files.csv,176
+main.py,./main.py,2066

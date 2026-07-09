@@ -12,11 +12,16 @@
   {
     "name": "files.json",
     "path": "./files.json",
-    "size": 410
+    "size": 412
+  },
+  {
+    "name": "files.csv",
+    "path": "./files.csv",
+    "size": 176
   },
   {
     "name": "main.py",
     "path": "./main.py",
-    "size": 2059
+    "size": 2066
   }
 ]
