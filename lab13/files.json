@@ -1,0 +1,22 @@
+[
+  {
+    "name": "hello_world.txt",
+    "path": "./hello_world.txt",
+    "size": 11
+  },
+  {
+    "name": "goodbye_world.txt",
+    "path": "./goodbye_world.txt",
+    "size": 13
+  },
+  {
+    "name": "files.json",
+    "path": "./files.json",
+    "size": 410
+  },
+  {
+    "name": "main.py",
+    "path": "./main.py",
+    "size": 2059
+  }
+]
