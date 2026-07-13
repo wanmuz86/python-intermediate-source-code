@@ -5,6 +5,7 @@ from pathlib import Path
 import json
 import pickle
 import csv
+from directory_snapshot import DirectorySnapshot
 
 # List me all the files , folders in my directory
 
@@ -41,7 +42,9 @@ def load_from_json(filename):
 # load from csv
 def load_from_csv(filename):
     with open(filename, "r", newline="") as csv_file:
+        # using DictReader -> Read it line by line
         reader = csv.DictReader(csv_file)
+        # for each line print it
         for row in reader:
             print(row)
 
@@ -50,6 +53,15 @@ def save_to_csv(data,filename):
         writer = csv.DictWriter(csv_file, fieldnames=data[0].keys())
         writer.writeheader()
         writer.writerows(data)
+
+def save_with_pickle(obj, filename):
+    with open(filename, "wb") as f:
+        pickle.dump(obj, f)
+
+def load_with_pickle(filename):
+    with open(filename, "rb") as f:
+        return pickle.load(f)
+
 
 def main():
     print("\n--- Part: Directory scan")
@@ -73,6 +85,29 @@ def main():
     # to read from file
     load_from_csv("files.csv")
 
+    print("\n -- Part 4: Pickle Persistence ---")
+    snapshot = DirectorySnapshot(base, file_data)
+    print("Snapshot summary ", snapshot.summary())
+
+    save_with_pickle(snapshot, "snapshot.pkl")
+
+    restored = load_with_pickle("snapshot.pkl")
+    print("Restored summary: ", restored.summary())
+
+
+# Why can JSON store lists/dicts but not objects?
+# JSOn and List and dict structure is the same
+# To store and object it needs to be serialized and deserialized
+
+# Why does pickle restore full object behavior?
+#Pickle  stores the serialized object directly
+# even for dict and list it needs to be serialized as Class
+# tthat is why pickle restore full object behavior
+
+# Which is safer for config files?
+# JSON is saver - to turn on / off easily
+# becareful not store sensitive information, in that case
+# .env file (environment) file is the suitabke
 
 
 if __name__ == "__main__":

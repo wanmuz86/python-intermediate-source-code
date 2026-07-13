@@ -5,6 +5,11 @@
     "size": 11
   },
   {
+    "name": "snapshot.pkl",
+    "path": "./snapshot.pkl",
+    "size": 488
+  },
+  {
     "name": "goodbye_world.txt",
     "path": "./goodbye_world.txt",
     "size": 13
@@ -12,16 +17,26 @@
   {
     "name": "files.json",
     "path": "./files.json",
-    "size": 412
+    "size": 652
   },
   {
     "name": "files.csv",
     "path": "./files.csv",
-    "size": 176
+    "size": 316
   },
   {
     "name": "main.py",
     "path": "./main.py",
-    "size": 2066
+    "size": 2703
+  },
+  {
+    "name": "directory_snapshot.py",
+    "path": "./directory_snapshot.py",
+    "size": 341
+  },
+  {
+    "name": "directory_snapshot.cpython-312.pyc",
+    "path": "./__pycache__/directory_snapshot.cpython-312.pyc",
+    "size": 816
   }
 ]

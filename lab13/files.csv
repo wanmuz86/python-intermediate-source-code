@@ -1,6 +1,9 @@
 name,path,size
 hello_world.txt,./hello_world.txt,11
+snapshot.pkl,./snapshot.pkl,488
 goodbye_world.txt,./goodbye_world.txt,13
-files.json,./files.json,412
-files.csv,./files.csv,176
-main.py,./main.py,2066
+files.json,./files.json,652
+files.csv,./files.csv,316
+main.py,./main.py,2703
+directory_snapshot.py,./directory_snapshot.py,341
+directory_snapshot.cpython-312.pyc,./__pycache__/directory_snapshot.cpython-312.pyc,816
